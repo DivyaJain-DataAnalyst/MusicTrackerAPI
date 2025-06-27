@@ -28,13 +28,13 @@ jobs:
 
     - name: 🚀 Start Your Server in Background
       run: |
-        nohup node server.js &
-        sleep 5
+        nohup node server.js & 
+        sleep 10
 
     - name: ✅ Run Keploy Test Suite on Cloud
       run: |
         export KEPLOY_API_KEY=${{ secrets.KEPLOY_API_KEY }}
         keploy test-suite \
-          --app=export KEPLOY_API_KEY=iilz6ArT6qGM5oKgKA== && keploy test-suite --app=72832df2-1e81-430a-9aef-f267ac77c595 --base-path http://localhost:5000 --cloud \
+          --app=72832df2-1e81-430a-9aef-f267ac77c595 \
           --base-path=http://localhost:5000/api/songs \
           --cloud
