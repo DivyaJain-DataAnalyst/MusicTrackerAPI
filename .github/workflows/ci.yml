@@ -1,0 +1,40 @@
+name: Keploy CI Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  keploy-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: 🧪 Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: 📦 Install Dependencies
+      run: npm install
+
+    - name: 🐰 Install Keploy CLI
+      run: |
+        curl --silent -L https://keploy.io/ent/install.sh | bash
+
+    - name: 🚀 Start Your Server in Background
+      run: |
+        nohup node server.js &
+        sleep 5
+
+    - name: ✅ Run Keploy Test Suite on Cloud
+      run: |
+        export KEPLOY_API_KEY=${{ secrets.KEPLOY_API_KEY }}
+        keploy test-suite \
+          --app=export KEPLOY_API_KEY=iilz6ArT6qGM5oKgKA== && keploy test-suite --app=72832df2-1e81-430a-9aef-f267ac77c595 --base-path http://localhost:5000 --cloud \
+          --base-path=http://localhost:5000/api/songs \
+          --cloud
