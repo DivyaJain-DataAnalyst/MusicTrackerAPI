@@ -18,10 +18,10 @@ We pledge to create a welcoming, harassment-free space where all contributors—
 ---
 
 **🚫 Zero Tolerance**
-❌ Harassment, discrimination, or derogatory language.
-❌ Spamming, off-topic promotions, or disruptive behavior.
-❌ Unsolicited private messages (DMs) without consent.
-❌ Plagiarism or unethical use of others' work.
+- ❌ Harassment, discrimination, or derogatory language.
+- ❌ Spamming, off-topic promotions, or disruptive behavior.
+- ❌ Unsolicited private messages (DMs) without consent.
+- ❌ Plagiarism or unethical use of others' work.
 
 ---
 
